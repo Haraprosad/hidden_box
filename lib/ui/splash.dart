@@ -35,7 +35,7 @@ class _SplashUIState extends State<SplashUI> {
             Container(
               alignment: Alignment.center,
               child: SvgPicture.asset(
-                ImageConst.PASSWORD_ICON,
+                ImageConst.SPLASH_ICON,
                 width: 150,
                 height: 150,
               ),
@@ -46,7 +46,7 @@ class _SplashUIState extends State<SplashUI> {
             Container(
               alignment: Alignment.center,
               child: Text(
-                "Password Manager",
+                "Hidden Box",
                 style: GoogleFonts.montserrat(
                   fontSize: 32,
                   fontWeight: FontWeight.w900,

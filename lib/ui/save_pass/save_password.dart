@@ -28,14 +28,20 @@ class _SavePasswordState extends State<SavePasswordUI> {
   @override
   void initState() {
     controller.getAllData();
-    passwordController.text = controller.genPassword.value.pass;
+    var passValue = controller.genPassword.value.pass;
+    if (passValue != null && passValue.length != 0) {
+      passwordController.text = passValue;
+    } else {
+      passwordController.text = "";
+    }
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         title: Text(
           "Add New Password",

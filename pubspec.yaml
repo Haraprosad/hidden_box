@@ -11,6 +11,10 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  #using fingerprint
+  local_auth: ^0.6.2+3
+
+  #flutter sdk
   flutter:
     sdk: flutter
 
@@ -21,6 +25,8 @@ dependencies:
   font_awesome_flutter: ^8.11.0
   flutter_svg:
   flutter_fimber: ^0.4.4
+  
+  
 
   # environment and encrypt
   encrypt: ^4.0.3

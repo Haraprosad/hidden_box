@@ -76,8 +76,8 @@ class _BottomNavUIState extends State<BottomNavUI> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               _buildTabItem(
-                icon: FontAwesomeIcons.home,
-                text: "Home",
+                icon: FontAwesomeIcons.addressCard,
+                text: "Accounts",
                 index: 0,
                 onPressed: (int value) {
                   setState(() {

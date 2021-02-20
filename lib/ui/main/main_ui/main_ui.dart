@@ -6,6 +6,7 @@ import 'package:hidden_box/controller/DataStatus.dart';
 import 'package:hidden_box/controller/home/home_controller.dart';
 import 'package:hidden_box/db/model/password_model.dart';
 import 'package:hidden_box/di/config_inject.dart';
+import 'package:hidden_box/ui/save_pass/save_password.dart';
 import 'package:hidden_box/ui/shared/common_ui.dart';
 import 'package:hidden_box/ui/shared/list_item.dart';
 
@@ -18,11 +19,37 @@ class HomePageUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        automaticallyImplyLeading: false,
+        title: Text(
+          "Accounts",
+          style: TextStyle(
+            color: context.theme.textTheme.bodyText1.color,
+          ),
+        ),
+        actions: [
+          InkWell(
+            onTap: () {
+              Get.to(SavePasswordUI());
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(right: 20.0, left: 10),
+              child: Icon(
+                Icons.add,
+                color: context.theme.iconTheme.color,
+                size: 32,
+              ),
+            ),
+          )
+        ],
+      ),
       body: CustomScrollView(
         slivers: [
           SliverPadding(
             padding: EdgeInsets.only(
-              top: 40 + kToolbarHeight,
+              top: 20,
               bottom: 20,
             ),
             sliver: SliverToBoxAdapter(
@@ -55,21 +82,6 @@ class HomePageUI extends StatelessWidget {
                       borderSide: BorderSide.none,
                     ),
                   ),
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Container(
-              padding: EdgeInsets.only(left: 15, right: 15),
-              child: Text(
-                'Recent Site',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  fontSize: 18,
-                  letterSpacing: 0.0,
-                  fontWeight: FontWeight.w500,
-                  height: 1,
                 ),
               ),
             ),
